@@ -107,6 +107,7 @@
             >Update Contact</loading-button
           >
         </div>
+        <!-- Confirm Edit Modal  -->
         <div v-if="showModal">
           <div class="fixed z-10 inset-0 overflow-y-auto">
             <div
