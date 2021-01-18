@@ -1,15 +1,10 @@
 <template>
   <div>
-    <inertia-link
-      class="flex items-center group py-3"
-      :href="route('dashboard')"
-    >
-      <div
-        :class="
-          isUrl('')
-            ? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
-            : 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
-        "
+    <inertia-link class="flex items-center group py-3" :href="route('dashboard')">
+      <div :class="isUrl('')
+        ? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
+        : 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+      "
       >
         Dashboard
       </div>
@@ -59,15 +54,15 @@
 <script>
 export default {
   props: {
-    url: String
+    url: String,
   },
   methods: {
     isUrl(...urls) {
-      if (urls[0] === "") {
-        return this.url === "";
+      if (urls[0] === '') {
+        return this.url === ''
       }
-      return urls.filter(url => this.url.startsWith(url)).length;
-    }
-  }
-};
+      return urls.filter(url => this.url.startsWith(url)).length
+    },
+  },
+}
 </script>
