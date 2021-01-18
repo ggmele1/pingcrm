@@ -89,9 +89,10 @@ class UsersController extends Controller
             'password' => ['nullable'],
             'owner' => ['required', 'boolean'],
             'photo' => ['nullable', 'image'],
+            'is_first_login' => ['nullable', 'numeric']
         ]);
 
-        $user->update(Request::only('first_name', 'last_name', 'email', 'owner'));
+        $user->update(Request::only('first_name', 'last_name', 'email', 'owner', 'is_first_login'));
 
         if (Request::file('photo')) {
             $user->update(['photo_path' => Request::file('photo')->store('users')]);
@@ -101,7 +102,12 @@ class UsersController extends Controller
             $user->update(['password' => Request::get('password')]);
         }
 
+        if (Request::get('is_first_login')) {
+            return Redirect::route('users.edit', $user->id)->with('success', 'Photo Uploaded');
+        }
+        
         return Redirect::back()->with('success', 'User updated.');
+        
     }
 
     public function destroy(User $user)

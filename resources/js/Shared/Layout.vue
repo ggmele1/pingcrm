@@ -53,19 +53,22 @@
                   <inertia-link
                     class="block px-6 py-2 hover:bg-indigo-500 hover:text-white"
                     :href="route('users.edit', $page.auth.user.id)"
-                    >My Profile</inertia-link
                   >
+                    My Profile
+                  </inertia-link>
                   <inertia-link
                     class="block px-6 py-2 hover:bg-indigo-500 hover:text-white"
                     :href="route('users')"
-                    >Manage Users</inertia-link
                   >
+                    Manage Users
+                  </inertia-link>
                   <inertia-link
                     class="block px-6 py-2 hover:bg-indigo-500 hover:text-white"
                     :href="route('logout')"
                     method="post"
-                    >Logout</inertia-link
                   >
+                    Logout
+                  </inertia-link>
                 </div>
               </dropdown>
 
@@ -104,19 +107,22 @@
                       <inertia-link
                         class="block px-6 py-2 text-sm font-medium leading-none text-gray-400"
                         :href="route('users.edit', $page.auth.user.id)"
-                        >My Profile</inertia-link
                       >
+                        My Profile
+                      </inertia-link>
                       <inertia-link
                         class="block px-6 py-2 text-sm font-medium leading-none text-gray-400"
                         :href="route('users')"
-                        >Manage Users</inertia-link
                       >
+                        Manage Users
+                      </inertia-link>
                       <inertia-link
                         class="block px-6 py-2 text-sm font-medium leading-none text-gray-400"
                         :href="route('logout')"
                         method="post"
-                        >Logout</inertia-link
                       >
+                        Logout
+                      </inertia-link>
                     </div>
                   </div>
                 </div>
@@ -140,11 +146,11 @@
 </template>
 
 <script>
-import Dropdown from "@/Shared/Dropdown";
-import FlashMessages from "@/Shared/FlashMessages";
-import Icon from "@/Shared/Icon";
-import Logo from "@/Shared/Logo";
-import MainMenu from "@/Shared/MainMenu";
+import Dropdown from '@/Shared/Dropdown'
+import FlashMessages from '@/Shared/FlashMessages'
+import Icon from '@/Shared/Icon'
+import Logo from '@/Shared/Logo'
+import MainMenu from '@/Shared/MainMenu'
 
 export default {
   components: {
@@ -152,21 +158,21 @@ export default {
     FlashMessages,
     Icon,
     Logo,
-    MainMenu
+    MainMenu,
   },
   data() {
     return {
       showUserMenu: false,
-      accounts: null
-    };
+      accounts: null,
+    }
   },
   methods: {
     url() {
-      return location.pathname.substr(1);
+      return location.pathname.substr(1)
     },
     hideDropdownMenus() {
-      this.showUserMenu = false;
-    }
-  }
-};
+      this.showUserMenu = false
+    },
+  },
+}
 </script>
